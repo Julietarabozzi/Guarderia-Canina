@@ -15,21 +15,18 @@ public class AnimalController {
     @Autowired
     private AnimalRepository animalRepository;
 
-    // Listar todos los notas
     @GetMapping
     public String listarAnimal(Model model) {
         model.addAttribute("animal", animalRepository.findAll());
         return "animal/listar";
     }
 
-    // Mostrar formulario para crear un nuevo nota
     @GetMapping("/nuevo")
     public String mostrarFormularioCrear(Model model) {
         model.addAttribute("animal", new Animal());
         return "animal/nuevo";
     }
 
-    // Guardar un nuevo nota
     @PostMapping
     public String guardaranimal(@ModelAttribute Animal animal, RedirectAttributes redirectAttributes) {
         animalRepository.save(animal);
@@ -37,7 +34,6 @@ public class AnimalController {
         return "redirect:/animal";
     }
 
-    // Mostrar formulario para editar un nota existente
     @GetMapping("/editar/{id}")
     public String mostrarFormularioEditar(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Animal animal = animalRepository.findById(id).orElse(null);
@@ -49,7 +45,6 @@ public class AnimalController {
         return "animal/editar";
     }
 
-    // Actualizar un nota existente
     @PostMapping("/actualizar/{id}")
     public String actualizaranimal(@PathVariable Long id, @ModelAttribute Animal animalActualizado, RedirectAttributes redirectAttributes) {
         Animal animal = animalRepository.findById(id).orElse(null);
@@ -65,7 +60,6 @@ public class AnimalController {
         return "redirect:/animal";
     }
 
-    // Eliminar un nota
     @GetMapping("/eliminar/{id}")
     public String eliminaranimal(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         Animal animal = animalRepository.findById(id).orElse(null);

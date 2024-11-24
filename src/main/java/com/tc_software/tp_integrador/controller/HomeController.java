@@ -9,7 +9,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("animal", "¡Bienvenido a la Aplicación CRUD de Notas!");
+        model.addAttribute("animal", "¡Bienvenido Guarderia de Mascotas!");
         return "home";
     }
 }

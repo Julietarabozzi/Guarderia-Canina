@@ -26,7 +26,7 @@
             <input type="text" id="fechaNacimiento" name="fechaNacimiento" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="${pageContext.request.contextPath}/notas" class="btn btn-secondary">Volver a la Lista</a>
+        <a href="${pageContext.request.contextPath}/animal" class="btn btn-secondary">Volver a la Lista</a>
     </form>
 </body>
 </html>
