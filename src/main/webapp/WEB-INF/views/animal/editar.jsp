@@ -11,6 +11,15 @@
             background-color: #e3f2fd; /* Fondo celeste */
             color: #333; /* Texto oscuro para contraste */
         }
+        .floating-image {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+            height: auto;
+            border-radius: 10px; /* Opcional: redondear bordes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade un efecto de sombra */
+        }
     </style>
 </head>
 <body class="container py-5">
@@ -35,5 +44,7 @@
         <button type="submit" class="btn btn-primary">Actualizar</button>
         <a href="${pageContext.request.contextPath}/animal" class="btn btn-secondary">Volver a la Lista</a>
     </form>
+        <!-- Imagen flotante en la esquina inferior derecha -->
+        <img src="${pageContext.request.contextPath}/images/bichon.jpeg" alt="Bichón" class="floating-image">
 </body>
 </html>
